@@ -10,7 +10,7 @@ module.exports = {
       }
       res.status(200).send({ success: true, user });
     } catch (e) {
-      res.status(500).send({ success: false, message: e });
+      res.send({ success: false, message: e });
     }
   },
   addUser: async (req, res) => {
@@ -24,7 +24,7 @@ module.exports = {
       var addedUser = await user.save();
       res.status(200).send({ success: true, addedUser });
     } catch (e) {
-      res.status(500).send({ success: false, message: e });
+      res.send({ success: false, message: e });
     }
   },
   updateUserData: async (req, res) => {
@@ -52,7 +52,7 @@ module.exports = {
       );
       return res.status(200).send({ success: true, updatedUser });
     } catch (e) {
-      res.status(500).send({ success: false, message: e });
+      res.send({ success: false, message: e });
     }
   },
 };

@@ -15,7 +15,7 @@ module.exports = {
         });
       }
     } catch (e) {
-      res.status(500).send({ success: false, message: e });
+      res.send({ success: false, message: e });
     }
   },
   saveGame: async (req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
       var savedGame = await game.save();
       res.status(200).send({ success: true, savedGame });
     } catch (e) {
-      res.status(500).send({ success: false, message: e });
+      res.send({ success: false, message: e });
     }
   },
   fetchLeaderBoard: async (req, res) => {
@@ -48,7 +48,7 @@ module.exports = {
       ]);
       res.status(200).send({ success: true, leaderboard });
     } catch (e) {
-      res.status(500).send({ success: false, message: e });
+      res.send({ success: false, message: e });
     }
   },
 };
